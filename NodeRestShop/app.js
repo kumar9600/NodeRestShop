@@ -1,8 +1,8 @@
 const express = require('express');
 const app =  express();
-app.use((request,response,next) =>{
-    response.statusCode = 200;
-    response.setHeader('Content-Type', 'application/json');
-    response.json({"message":"yah its worked"});
-});
+const productRoutes = require('./api/routes/products');
+const orderRoutes = require('./api/routes/orders');
+
+app.use('/products',productRoutes);
+app.use('/orders',orderRoutes);
 module.exports = app;
