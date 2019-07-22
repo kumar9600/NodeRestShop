@@ -11,6 +11,7 @@ router.post('/', (req, res, next) => {
     res.status(201).json({
         message: "handling POST request"
     });
+    console.log(req.body);
 });
 
 router.get('/:productId', (req, res, next) => {
